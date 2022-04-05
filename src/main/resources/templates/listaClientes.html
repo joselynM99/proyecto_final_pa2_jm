@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+	<link th:href="@{/CSS/misprimerosestilos.css}" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body>
+	<table class="table">
+		<!----cabezera de la tabla---->
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Cedula</th>
+				<th>Genero</th>
+				<th>Fecha de nacimiento</th>
+			</tr>
+		</thead>
+
+		<!----cuerpo de la tabla---->
+		<tbody>
+
+			<tr th:each=" cliente : ${clientes}">
+				<form action="#" th:action="@{/clientes/borrar/{id}(id=${cliente.id})}" th:object="${cliente}"
+					th:method="delete">
+					<td th:text="${cliente.id}"></td>
+					<td th:text="${cliente.nombre}"></td>
+					<td th:text="${cliente.apellido}"></td>
+					<td th:text="${cliente.cedula}"></td>
+					<td th:text="${cliente.genero}"></td>
+					<td th:text="${cliente.fechaNacimiento}"></td>
+					<td>
+						<input type="submit" value="Borrar">
+					</td>
+				</form>
+			</tr>
+		</tbody>
+	</table>
+</body>
+
+</html>

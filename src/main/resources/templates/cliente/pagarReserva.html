@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class=container my-5>
+		<div class="card-body">
+			<form th:action="@{/clientes/reservarVehiculo}" th:object="${reserva}" method="post">
+				<table class="table-danger">
+					<tr>
+						<td>
+							<label class="col-form-label">Cedula Cliente:</label>
+						</td>
+						<td>
+							<td th:text="*{cliente.cedula}" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Valor a pagar:</label>
+						</td>
+						<td>
+							<td th:text="*{cobro.valorTotalAPagar}" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Vehiculo placa:</label>
+						</td>
+						<td>
+							<td th:text="*{vehiculo.placa}" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Ingrese número de tarjeta:</label>
+						</td>
+						<td>
+							<input class="form-control" type="text" id="numeroTarjeta"
+								th:field="*{cobro.numeroTarjeta}">
+						</td>
+					</tr>
+					<tr hidden=false>
+						<td>
+							<label>Cliente:</label>
+						</td>
+						<td>
+							<input type="text" id="cedula" th:field="*{cliente.cedula}">
+						</td>
+					</tr>
+					<tr hidden=false>
+						<td>
+							<label>Vehiculo:</label>
+						</td>
+						<td>
+							<input type="text" id="placa" th:field="*{vehiculo.placa}">
+						</td>
+					</tr>
+					<tr hidden=false>
+						<td>
+							<label>Fecha inicio:</label>
+						</td>
+						<td>
+							<input type="text" id="placa" th:field="*{fechaInicio}">
+						</td>
+					</tr>
+					<tr hidden=false>
+						<td>
+							<label>Fecha final:</label>
+						</td>
+						<td>
+							<input type="text" id="placa" th:field="*{fechaFinal}">
+						</td>
+					</tr>
+					<tr hidden=false>
+						<td>
+							<label>Cobro valor a pagar:</label>
+						</td>
+						<td>
+							<input type="text" id="valorTotalAPagar" th:field="*{cobro.valorTotalAPagar}">
+						</td>
+					</tr>
+					<tr hidden=false>
+						<td>
+							<label>Cobro valor iva:</label>
+						</td>
+						<td>
+							<input type="text" id="valorIVA" th:field="*{cobro.valorIVA}">
+						</td>
+					</tr>
+					<tr hidden=false>
+						<td>
+							<label>Cobro valor subtotal:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="valorIVA" th:field="*{cobro.subtotal}">
+						</td>
+					</tr>
+
+				</table>
+				<input type="submit" class="btn btn-danger" value="Reservar">
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>

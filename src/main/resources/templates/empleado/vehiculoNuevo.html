@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible">
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+	<div class=container my-5>
+		<div class="card-body">
+			<form th:action="@{/empleados/insertarVehiculo}" th:object="${vehiculo}" method="post">
+				<table>
+					<tr>
+						<td>
+							<label class="col-form-label">Placa:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="placa" th:field="*{placa}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Modelo:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="modelo" th:field="*{modelo}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Marca:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="marca" th:field="*{marca}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Año de fabricación:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="anioFabricacion" th:field="*{anioFabricacion}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Pais de fabricación:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="paisFabricacion" th:field="*{paisFabricacion}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Cilindraje:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="cilindraje" th:field="*{cilindraje}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Avaluo:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="avaluo" th:field="*{avaluo}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Valor por día:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="valorPorDia" th:field="*{valorPorDia}">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<label class="col-form-label">Estado:</label>
+						</td>
+						<td>
+							<input type="text" class="form-control" id="estado" th:field="*{estado}">
+						</td>
+					</tr>
+				</table>
+				<input type="submit" class="btn btn-danger" value="Insertar Vehiculo">
+			</form>
+		</div>
+	</div>
+</body>
+
+</html>
